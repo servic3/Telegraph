@@ -10,7 +10,7 @@ export async function onRequest(context) {  // Contents of context object
      context.request
      const url = new URL(request.url);
     
-    const response = fetch('https://telegra.ph/' + url.pathname + url.search, {
+    const response = fetch('https://telegraph-7ry.pages.dev/' + url.pathname + url.search, {
          method: request.method,
          headers: request.headers,
          body: request.body,
@@ -84,7 +84,7 @@ export async function onRequest(context) {  // Contents of context object
                     
                 }
             }else{
-                await fetch(`https://api.moderatecontent.com/moderate/?key=`+apikey+`&url=https://telegra.ph/` + url.pathname + url.search).
+                await fetch(`https://api.moderatecontent.com/moderate/?key=`+apikey+`&url=https://telegraph-7ry.pages.dev/` + url.pathname + url.search).
                 then(async (response) => {
                     let moderate_data = await response.json();
                     console.log(moderate_data)
